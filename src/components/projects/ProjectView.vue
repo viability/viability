@@ -1,10 +1,10 @@
 <template>
-  <h3>Nuevo proyecto</h3>
+  <h1>Aquí se va a presentar el avance del proyecto..</h1>
 </template>
 
 <script>
   export default {
-    name: "ProjectNew"
+    name: "ProjectView"
   }
 </script>
 

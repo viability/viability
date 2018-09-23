@@ -19,6 +19,6 @@
   }
 </script>
 
-<style src="../node_modules/bootswatch/dist/slate/bootstrap.min.css">
+<style src="../node_modules/bootswatch/dist/cosmo/bootstrap.min.css">
 
 </style>
