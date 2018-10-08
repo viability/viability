@@ -23,39 +23,15 @@
 </template>
 
 <script>
-export default {
+  import { headerText } from "../languages";
+
+  export default {
   name: 'Header',
   data() {
     return {
-      title: 'Vi@bility'
+      title: headerText.title
     }
   },
-  // created() {
-  //   let to = this.$route.path;
-  //   // eslint-disable-next-line
-  //   console.log("Ruta: " + to);
-  // },
-  directives: {
-    'decorate-title': {
-      // eslint-disable-next-line
-      bind(el, binding, vnode) {
-        let via = binding.value.substring(0, binding.value.indexOf("@") + 1);
-        let bility = binding.value.substr(binding.value.indexOf("@") + 1);
-
-        let spanVia = document.createElement('span');
-        let textContent = document.createTextNode(via);
-        spanVia.appendChild(textContent);
-
-        let spanBility = document.createElement('span');
-        textContent = document.createTextNode(bility);
-        spanBility.appendChild(textContent);
-        spanBility.style.fontWeight = 'bold';
-        spanBility.style.fontStyle = 'italic';
-
-        el.appendChild(spanVia).appendChild(spanBility);
-      }
-    }
-  }
 }
 </script>
 

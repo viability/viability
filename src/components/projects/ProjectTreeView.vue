@@ -1,129 +1,24 @@
 <template>
   <ul>
-    <TreeView class="item" :model="treeData" :isView="isView"/>
+    <TreeView class="item" :model="treeData" :tree="treeData" :isView="isView"/>
   </ul>
 </template>
 
 <script>
   import TreeView from './TreeView'
+  import { tree } from "../../routes";
 
   export default {
     name: "ProjectTreeView",
     props: ['clickView'],
     data() {
       return {
-        treeData: {
-          name: '<nuevo proyecto>',
-          children: [
-            {
-              name: 'Datos y parámetros',
-              component: 'ProjectViewData'
-            },
-            {
-              name: 'Formulación y preparación',
-              children: [
-                {
-                  name: 'Estudio de mercado',
-                  children: [
-
-                  ]
-                },
-                {
-                  name: 'Estudio técnico',
-                  children: [
-
-                  ]
-                },
-                {
-                  name: 'Estudio organizacional',
-                  children: [
-
-                  ]
-                }
-              ],
-              plus: false
-            },
-            {
-              name: 'Evaluación',
-              children: [
-                {
-                  name: 'Estudio financiero',
-                  children: [
-                    {
-                      name: 'Ingresos',
-                      children: [
-                        { name: '<nuevo>' }
-                      ],
-                      plus: true
-                    },
-                    {
-                      name: 'Costos de Operación',
-                      children: [
-                        {
-                          name: 'Producción',
-                          children: [
-                            { name: '<nuevo>' }
-                          ],
-                          plus: true
-                        },
-                        {
-                          name: 'Administración',
-                          children: [
-                            { name: '<nuevo>' }
-                          ],
-                          plus: true
-                        },
-                        {
-                          name: 'Ventas',
-                          children: [
-                            { name: '<nuevo>' }
-                          ],
-                          plus: true
-                        },
-                        {
-                          name: 'Financieros',
-                          children: [
-                            { name: '<nuevo>' }
-                          ],
-                          plus: true
-                        }
-                      ],
-                      plus: false
-                    },
-                    {
-                      name: 'Inversiones',
-                      children: [
-                        {
-                          name: 'Items de inversión',
-                          children: [
-                            { name: '<nuevo>' }
-                          ],
-                          plus: true
-                        },
-                        { name: 'Activos fijos' },
-                        { name: 'Activos diferidos' },
-                        { name: 'Capital de trabajo' }
-                      ],
-                      plus: false
-                    },
-                    { name: 'Depreciación de AF' },
-                    { name: 'Amortización de AD' },
-                    { name: 'Financiamiento externo' }
-                  ],
-                  plus: false
-                }
-              ],
-              plus: false
-            }
-          ],
-          plus: false,
-          component: 'ProjectView'
-        }
+        treeData: tree
       }
     },
     methods: {
-      isView(component) {
-        this.clickView(component);
+      isView(component, breadcrumb) {
+        this.clickView(component, breadcrumb);
       }
     },
     components: {
@@ -138,7 +33,8 @@
   }
 
   ul {
-    padding-left: 1em;
+    padding-left: 0.5em;
     line-height: 2em;
+    list-style: none;
   }
 </style>

@@ -13,5 +13,7 @@
 </script>
 
 <style scoped>
-
+  .jumbotron {
+    margin-bottom: 0;
+  }
 </style>

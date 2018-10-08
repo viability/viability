@@ -19,6 +19,6 @@
   }
 </script>
 
-<style src="../node_modules/bootswatch/dist/cosmo/bootstrap.min.css">
+<style src="../node_modules/bootswatch/dist/cosmo/bootstrap.min.css"></style>
 
-</style>
+<style src="../node_modules/@mdi/font/css/materialdesignicons.min.css"></style>
