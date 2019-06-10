@@ -60,7 +60,7 @@
       clickComponent(component) {
         this.isComponent = component;
       },
-
+//Solo con fin de chequeo del repositorio..
       clickView(component, breadcrumb) {
         this.clickComponent(component);
         this.breads = breadcrumb;
