@@ -3,9 +3,14 @@ export const headerText = {
 };
 
 export const instructive = {
+  typeof: {
+    string: "String",
+    uuid: "Uuid"
+  },
   classifiesNewProject: "Ayudanos a clasificar tu nuevo proyecto",
   labels: {
     nameProject: "Nombre del proyecto",
+    descriptionProject: "Descripción",
     typeFunctionOnCompany: "Tipo de función que desempeña dentro de la empresa",
     socialApproach: "Finalidad o enfoque social",
     typeActivity: "Tipo de actividad al sector que va dirigido",
@@ -19,17 +24,27 @@ export const instructive = {
       selectedSocialAppr: "Seleccione un enfoque social",
       selectedTypeActivity: "Seleccione un tipo de actividad",
       selectedSector: "Seleccione un sector"
+    },
+    length: {
+      nameProject: 30
     }
   },
   placeholder: {
-    writeNameProject: "Aquí escribe el nombre de tu proyecto"
+    writeNameProject: "Aquí escribe el nombre de tu proyecto",
+    writeDescriptionProject: "Danos una breve reseña de lo que será tu nuevo proyecto"
   },
   textView: {
     origin1: "Los proyectos tienen su origen en la satisfacción de necesidades individuales y colectivas,\n" +
             "en el primer caso, la de quienes desean tener un",
     origin2: "negocio propio",
     origin3: "y en el segundo de los casos:",
-    origin4: "¡Compártenos tu resultado esperado!"
+    origin4: "¡Compártenos! ¿Cuál es tu resultado esperado?",
+    resumeToClassifier: "Una última clasificación, según diversos criterios y desde tus puntos de vista. " +
+      "Seleccione un interés específico de cada sección para los problemas de formulación.",
+    interventionCriteria: "--Clasificación por criterio de intervención--",
+    socialIntervention: "--Alcance de intervención social--",
+    withinTheCompany: "--Criterio dentro de la empresa--"
+
   },
   values: {
     origins: [
@@ -232,14 +247,17 @@ export const instructive = {
     ],
     sectorIntervention: [
       {
+        id: 1,
         label: "Agropecuario",
         icon: "mdi-tractor"
       },
       {
+        id: 2,
         label: "Industria",
         icon: "mdi-factory"
       },
       {
+        id: 3,
         label: "Servicios",
         icon: "mdi-room-service"
       }
@@ -247,4 +265,14 @@ export const instructive = {
 
   }
 
+};
+
+export const message = {
+  errorMessage: {
+    failTypeValue: "El tipo de valor enviado al campo ${name} es incorrecto.",
+    failValueNull: "El campo ${name} no se puede enviar con valor es nulo.",
+    failValueEmpty: "El valor del campo ${name} es vacío.",
+    failValueLength: "El campo ${name} no debe sobrepasar los ${length} caracteres.",
+    failValueUuid: "El campo ${name} presenta errores de validación.",
+  },
 };

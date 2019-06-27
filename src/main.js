@@ -11,6 +11,8 @@ Vue.use(VueRouter);
 
 Vue.component('v-select', VueSelect);
 
+export var bus = new Vue();
+
 const router = new VueRouter({
   mode: 'history',
   routes: routes

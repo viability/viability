@@ -11,11 +11,17 @@
     <!-- Page Content  -->
     <div id="content">
       <nav class="card bg-light navbar-light">
-        <div class="card-header">
-          <button type="button" id="sidebarCollapse" class="btn btn-primary" @click="toggleBar()">
-            <i class="mdi mdi-format-align-left"></i>
+        <div id="contentBtnTop" class="card-header">
+          <button type="button" :title="toggle" class="btn btn-primary" @click="toggleBar()">
+            <i class="mdi mdi-18px mdi-format-align-left"></i>
             <span>&nbsp;</span>
             <span>{{ toggle }}</span>
+          </button>
+
+          <button type="button" title="Guardar" class="btn btn-outline-secondary" :class="{ disabled: disableSvBtn }">
+            <i class="mdi mdi-18px mdi-content-save"></i>
+            <span>&nbsp;</span>
+            <span>Guardar</span>
           </button>
         </div>
       </nav>
@@ -48,7 +54,8 @@
         sidebar: false,
         toggle: "Ocultar",
         isComponent: tree.component,
-        breads: [{ name: tree.name, component: tree.component, active: false }]
+        breads: [{ name: tree.name, component: tree.component, active: false }],
+        disableSvBtn: true
       }
     },
     methods: {
@@ -60,7 +67,7 @@
       clickComponent(component) {
         this.isComponent = component;
       },
-//Solo con fin de chequeo del repositorio..
+
       clickView(component, breadcrumb) {
         this.clickComponent(component);
         this.breads = breadcrumb;
@@ -105,6 +112,11 @@
     min-height: 100vh;
   }
 
+  #contentBtnTop .btn-outline-secondary {
+    float: right;
+    border: none;
+  }
+
   /* ---------------------------------------------------
       MEDIAQUERIES
   ----------------------------------------------------- */
@@ -116,7 +128,7 @@
     #sidebar.active {
       margin-left: 0;
     }
-    #sidebarCollapse span {
+    button span {
       display: none;
     }
     .wrapper {

@@ -10,6 +10,8 @@
 </template>
 
 <script>
+  import { bus } from "../../main";
+
   export default {
     name: "ProjectBreadcrumb",
     props: {
@@ -32,6 +34,11 @@
           this.breadcrumbs[this.breadcrumbs.length - 1].active = false;
         }
       }
+    },
+    created() {
+      bus.$on('nameProject', (nameProject) => {
+        this.breadcrumbs[0].name = nameProject
+      });
     }
   }
 </script>

@@ -7,6 +7,7 @@
 <script>
   import TreeView from './TreeView'
   import { tree } from "../../routes";
+  import { bus } from "../../main";
 
   export default {
     name: "ProjectTreeView",
@@ -23,6 +24,11 @@
     },
     components: {
       TreeView
+    },
+    created() {
+      bus.$on('nameProject', (nameProject) => {
+        this.treeData.name = nameProject
+      });
     }
   }
 </script>
